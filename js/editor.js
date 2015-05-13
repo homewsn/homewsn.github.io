@@ -296,7 +296,7 @@ HomeWSN.Editor = (function() {
 	});
 	$('#action-value').attr({
 		'data-original-title': RULES.getTitle('action-value'),
-		'data-content': RULES.getDesc('Publish value to topic')
+		'data-content': RULES.getDesc('action-value')
 	});
 	$('#action-topic').attr({
 		'data-original-title': RULES.getTitle('action-topic'),
