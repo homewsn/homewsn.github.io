@@ -1,0 +1,9 @@
+[
+{"id": "25667", "param": "1", "unit": "on(0)-off(1)", "data_type": "long", "icon_type": "ImageFile", "icon_url_na": "img/gray-door.png", "icon_url_0": "img/closed-door.png", "icon_url_1": "img/open-door.png", "value_0": "close", "value_1": "open", "location": "Lobby", "type": "Entry Door", "comment": ""},
+{"id": "39103", "param": "1", "unit": "°C", "data_type": "long", "icon_type": "LinearGauge", "icon_url_na": "", "icon_url_0": "", "icon_url_1": "", "value_0": "0", "value_1": "40", "location": "Bedroom", "type": "Air Temperature", "comment": "(white box)"},
+{"id": "39103", "param": "2", "unit": "%", "data_type": "long", "icon_type": "CircularGauge", "icon_url_na": "", "icon_url_0": "", "icon_url_1": "", "value_0": "0", "value_1": "100", "location": "Bedroom", "type": "Air Humidity", "comment": ""},
+{"id": "39333", "param": "1", "unit": "clear(0)-alarm(1)", "data_type": "long", "icon_type": "ImageFile", "icon_url_na": "img/gray-signal.png", "icon_url_0": "img/green-signal.png", "icon_url_1": "img/red-signal.png", "value_0": "clear", "value_1": "alarm", "location": "Lobby", "type": "Motion Detection", "comment": ""},
+{"id": "49090", "param": "1", "unit": "°C", "data_type": "long", "icon_type": "LinearGauge", "icon_url_na": "", "icon_url_0": "", "icon_url_1": "", "value_0": "0", "value_1": "60", "location": "Bedroom", "type": "Radiator Temperature", "comment": ""},
+{"id": "55098", "param": "1", "unit": "°C", "data_type": "long", "icon_type": "LinearGauge", "icon_url_na": "", "icon_url_0": "", "icon_url_1": "", "value_0": "0", "value_1": "40", "location": "Bedroom", "type": "Air Temperature", "comment": ""},
+{"id": "55098", "param": "2", "unit": "mmHg", "data_type": "long", "icon_type": "LinearGauge", "icon_url_na": "", "icon_url_0": "", "icon_url_1": "", "value_0": "700", "value_1": "800", "location": "Bedroom", "type": "Atmospheric Pressure", "comment": ""}
+]

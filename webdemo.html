@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HomeWSN: WebUI Description</title>
+	<meta charset="UTF-8">
+
+	<link rel="icon" type="image/png" href="img/homewsn.png">
+
+	<link rel="stylesheet" href="css/bootstrap-3.2.0.min.css">
+	<link rel="stylesheet" href="css/non-responsive.css">
+	<link rel="stylesheet" href="css/webdemo.css">
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="index.html">HomeWSN</a>
+		</div>
+		<div id="navbar-menu">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="javascript:;">Description</a></li>
+				<li><a href="sensors.html">WebUI</a></li>
+				<li><a href="devices-simulator.html">Simulator</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<p>A web based user interface (WebUI) is a main way you can control your actuators and sensors. In the usual manner, WebUI pages are loaded in the browser from your personal web server, then they receive information from two external sources:</p>
+	<ul>
+		<li>Base and statistic information is loaded from the MySQL database server via php scripts located on the web server.</li>
+		<li>The current sensors and actuators status is taken from <a href="https://github.com/homewsn/whsnbg">whsnbg</a> MQTT broker gateway via websocket.</li>
+	</ul>
+	<p>The network topology of the demonstration is the different and shown below. The rules engine is absent but you can create, load, edit and deploy rules. Click the device icon to learn more.</p>
+</div>
+
+<div class="container" id="main">
+	<img class="node server" id="node-server-mqtt" src="img/server-mqtt.png">
+	<img class="node server" id="node-server-web" src="img/server-web.png">
+	<img class="node comp" id="node-comp-desktop-1" src="img/comp.png">
+	<img class="node comp" id="node-comp-desktop-2" src="img/comp.png">
+	<div class="props" id="props">
+		<div class="desc" id="node-server-mqtt-desc">
+			<img src="img/logo-mosquitto.png">
+			<h4>Public MQTT server with Websocket support</h4>
+			<p><a href="http://test.mosquitto.org/">Mosquitto</a> public MQTT broker is used for this demo.</p>
+			<p>Note: Public MQTT brokers must not be used for anything more than basic testing. There is no way to predict when public servers will go up and down and many public servers periodically delete their open connections and subscriptions.</p>
+		</div>
+		<div class="desc" id="node-server-web-desc">
+			<img src="img/logo-github.png">
+			<h4>Static web server</h4>
+			<p><a href="https://pages.github.com/">GitHub pages</a> web hosting is used for this demo.</p>
+			<p>Note: Github hosts only plain static html pages and has no the database support. It means all database calls are simulated in this demo.</p>
+		</div>
+		<div class="desc" id="node-comp-desktop-1-desc">
+			<h4>End user computer for device simulation</h4>
+			<p>Any computer or a variety of smart phones with a modern browser. The browser must support HTML5 and Websocket.</p>
+			<p>Click <a href="devices-simulator.html" target="_blank">this link</a> to open the simulation page in new window or use the main navigation bar at the top of this page.</p>
+			<p>Note: The device status is randomly generated each time you open the simulation page.</p>
+		</div>
+		<div class="desc" id="node-comp-desktop-2-desc">
+			<h4>End user computer for WebUI demonstration</h4>
+			<p>Any computer or a variety of smart phones with a modern browser. The browser must support HTML5 and Websocket.</p>
+			<p>Click <a href="sensors.html" target="_blank">this link</a> to open the WebUI pages in new window or use the main navigation bar at the top of this page.</p>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-3.2.0.min.js"></script>
+<script type="text/javascript" src="js/jquery.jsPlumb-1.7.5-min.js"></script>
+<script type="text/javascript" src="js/webdemo.js"></script>
+<!-- Google analytics -->
+<script type="text/javascript" src="js/analytics.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+.center-row {
+	display: table;
+	width: 100%;
+}
+
+.center-cell {
+	text-align: center;
+	width: 150px!important;
+	height: 250px!important;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.img-center-cell {
+	display: table-cell;
+	width: 150px!important;
+	height: 150px!important;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+.gauge-center-cell {
+	display: table-cell;
+	width: 150px!important;
+	height: 150px!important;
+	cursor: pointer;
+}
+
+.gauge-placeholder {
+	width: 122px;
+	height: 122px;
+	margin: 0 auto;
+}
+
+.title-placeholder {
+	line-height: 1.0!important;
+}
+
+.table {
+	border-bottom: 1px solid #dddddd;
+}

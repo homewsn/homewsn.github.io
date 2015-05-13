@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HomeWSN: Database table 'Sensors'</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="icon" type="image/png" href="img/homewsn.png">
+
+	<link rel="stylesheet" href="css/bootstrap-3.2.0.min.css">
+	<link rel="stylesheet" href="css/bootstrap-xeditable-1.5.1.css">
+	<style type='text/css'>
+	.table {
+		border-bottom: 1px solid #dddddd;
+	}
+	</style>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-static-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="index.html">HomeWSN</a>
+		</div>
+		<div class="collapse navbar-collapse" id="navbar-menu">
+			<ul class="nav navbar-nav">
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Actuators <b class="caret"></b></a>
+					<ul id="actuators-menu" class="dropdown-menu">
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Sensors <b class="caret"></b></a>
+					<ul id="sensors-menu" class="dropdown-menu">
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">DB Tables <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li class="dropdown-header">Actuators</li>
+						<li><a href="dbactuators.html">Locations</a></li>
+						<li><a href="dbactuatorsparameters.html">Device types</a></li>
+						<li class="divider"></li>
+						<li class="dropdown-header">Sensors</li>
+						<li class="active"><a href="javascript:;">Locations</a></li>
+						<li><a href="dbsensorsparameters.html">Measured parameters</a></li>
+					</ul>
+				</li>
+				<li id="editor-menu"><a href="editor.html">Rules Editor</a></li>
+			</ul>
+			<div class="pull-right">
+				<p id="webmqttmessage" class="navbar-text"></p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="page-header">
+		<h4>DB Table: 'Sensors'</h4>
+	</div>
+	<table id="edittable" class="table table-striped table-hover"></table>
+</div>
+
+<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="js/jquery.cookie-1.4.1.js"></script>
+<script type="text/javascript" src="js/bootstrap-3.2.0.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-xeditable-1.5.1.min.js"></script>
+<!-- HomeWSN -->
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/navbar.js"></script>
+<script type="text/javascript" src="js/dbsensors-content.js"></script>
+<!-- Google analytics -->
+<script type="text/javascript" src="js/analytics.js"></script>
+
+</body>
+</html>

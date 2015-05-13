@@ -1,0 +1,19 @@
+.table {
+	border-bottom: 1px solid #dddddd;
+}
+.table > tbody > tr > td {
+	vertical-align: middle;
+}
+.text-status-center-cell {
+	display: table-cell;
+	height: 94px!important;
+	text-align: center;
+    vertical-align: middle;
+}
+.text-center-cell {
+	text-align: center;
+}
+.text-bold {
+	font-weight: bold;
+	font-size: 20px;
+}

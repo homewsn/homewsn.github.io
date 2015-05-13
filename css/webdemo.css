@@ -1,0 +1,71 @@
+.desc {
+	display: none;
+}
+
+.node {
+	cursor: help;
+}
+.server {
+	position: absolute;
+	width: 71px;
+	height: 97px;
+}
+.comp {
+	position: absolute;
+	width: 97px;
+	height: 97px;
+}
+
+.props {
+	display: block;
+    position:absolute;
+	height: 280px;
+	width: 320px;
+	border: 1px solid #2e6f9a;
+	border-radius: 8px;
+	background-color: #ffffff;
+	box-shadow: 2px 2px 19px #e0e0e0;
+	padding: 10px;
+	color: black;
+}
+.props ul {
+	list-style: none;
+	padding: 0px;
+}
+.props ul li {
+	margin: 0!important;
+}
+
+#node-server-mqtt {
+	left: 387px;
+	top: 0px;
+}
+#node-server-web {
+	left: 387px;
+	top: 180px;
+}
+#node-comp-desktop-1 {
+	left: 15px;
+	top: 0px;
+}
+#node-comp-desktop-2 {
+	left: 15px;
+	top: 180px;
+}
+#props {
+	left: 530px;
+	top: 0px;
+}
+
+
+#main {
+	position: absolute;
+	top: 250px;
+	left: 0px;
+	height: 280px;
+	right: 0px;
+/* disable text selection */
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}

@@ -1,0 +1,4 @@
+[
+"Bedroom",
+"Lobby"
+]

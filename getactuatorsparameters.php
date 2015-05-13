@@ -1,0 +1,4 @@
+[
+{"id": "63888", "param": "1", "unit": "on(1)-off(0)", "data_type": "long", "icon_type": "ImageFile", "icon_url_na": "img/gray-light-bulb.png", "icon_url_0": "img/gray-light-bulb.png", "icon_url_1": "img/light-bulb.png", "value_0": "off", "value_1": "on", "location": "Lobby", "type": "Wall Light", "comment": "#1"},
+{"id": "63889", "param": "1", "unit": "on(1)-off(0)", "data_type": "long", "icon_type": "ImageFile", "icon_url_na": "img/gray-light-bulb.png", "icon_url_0": "img/gray-light-bulb.png", "icon_url_1": "img/light-bulb.png", "value_0": "off", "value_1": "on", "location": "Bedroom", "type": "Downlights", "comment": ""}
+]

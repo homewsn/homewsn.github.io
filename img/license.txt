@@ -1,0 +1,13 @@
+closed-door.png
+open-door.png
+gray-door.png
+green-signal.png
+red-signal.png
+gray-signal.png
+Copyright © 2000-2015 Aha-Soft. All rights reserved.
+Purchased by Vladimir Alemasov for HomeWSN.com Demo only.
+
+light-bulb.png
+gray-light-bulb.png
+Free icons, downloaded from http://findicons.com/icon/169086/ktip?id=292171
+GNU/GPL License

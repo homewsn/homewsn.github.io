@@ -1,0 +1,126 @@
+#wsn-cloud {
+	position: absolute;
+	width: 450px;
+	height: 300px;
+}
+
+.desc {
+	display: none;
+}
+
+.node {
+	cursor: help;
+}
+.mote {
+	position: absolute;
+	width: 23px;
+	height: 59px;
+}
+.gateway {
+	position: absolute;
+	width: 56px;
+	height: 41px;
+}
+.server {
+	position: absolute;
+	width: 71px;
+	height: 97px;
+}
+.comp {
+	position: absolute;
+	width: 97px;
+	height: 97px;
+}
+
+._jsPlumb_connector {
+	cursor: help;
+}
+
+.props {
+	display: block;
+    position:absolute;
+	height: 520px;
+	width: 320px;
+	border: 1px solid #2e6f9a;
+	border-radius: 8px;
+	background-color: #ffffff;
+	box-shadow: 2px 2px 19px #e0e0e0;
+	padding: 10px;
+	color: black;
+}
+/*
+.props h4 {
+	text-align: center;
+}
+*/
+.props ul {
+	list-style: none;
+	padding: 0px;
+}
+.props ul li {
+	margin: 0!important;
+}
+
+#wsn-cloud {
+	left: 15px;
+	top: 0px;
+}
+#node-sensor-1 {
+	left: 49px;
+	top: 128px;
+}
+#node-sensor-2 {
+	left: 208px;
+	top: 13px;
+}
+#node-actuator-1 {
+	left: 150px;
+	top: 182px;
+}
+#node-border-router {
+	left: 367px;
+	top: 108px;
+}
+#node-broker-gateway {
+	left: 400px;
+	top: 247px;
+}
+#node-server-db {
+	left: 382px;
+	top: 416px;
+}
+#node-server-web {
+	left: 267px;
+	top: 416px;
+}
+#node-comp-desktop {
+	left: 15px;
+	top: 424px;
+}
+#props {
+	left: 530px;
+	top: 0px;
+}
+
+
+#main {
+	position: absolute;
+	top: 250px;
+	left: 0px;
+	height: 520px;
+	right: 0px;
+/* disable text selection */
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+
+.aLabel {
+    background-color: white;
+    opacity: 0.8;
+    padding: 0.3em;
+    border-radius: 0.5em;
+    border: 1px solid #346789;
+    cursor: help;
+	font-size: 12px;
+}
