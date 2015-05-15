@@ -11,3 +11,5 @@ light-bulb.png
 gray-light-bulb.png
 Free icons, downloaded from http://findicons.com/icon/169086/ktip?id=292171
 GNU/GPL License
+
+All other images has been taken from the Visio stencils.
