@@ -35,7 +35,7 @@ HomeWSN.Content = (function() {
 		{
 			colSet.push(key);
 			if (key == 'id')
-				$headerTr.append($('<th/>').text('Sensor #'));
+				$headerTr.append($('<th/>').text('Actuator #'));
 			else if (key == 'param')
 				$headerTr.append($('<th/>').text('Param #'));
 			else if (key == 'unit')
