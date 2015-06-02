@@ -12,4 +12,35 @@ gray-light-bulb.png
 Free icons, downloaded from http://findicons.com/icon/169086/ktip?id=292171
 GNU/GPL License
 
-All other images has been taken from the Visio stencils.
+mote.png
+comp.png
+comp-hot.png
+mote-hot.png
+gateway.png
+gateway-hot.png
+server-db.png
+server-db-hot.png
+server-web-hot.png
+server-web.png
+cloud.png
+server-mqtt-hot.png
+server-mqtt.png
+have been taken from the Visio stencils.
+
+init-diagram.png
+init-terminal.png
+active-diagram.png
+active-terminal.png
+cc2531dongle_1.jpg
+cc2531dongle_2.jpg
+cc2531dongle_3.jpg
+cc2531-ccdebugger.jpg
+cc2531-extantenna.jpg
+antenna_pcb.jpg
+antenna_ext.jpg
+smartrfsniff.jpg
+smartrfprog.jpg
+ccdebugger.jpg
+Copyright © 2015 Vladimir Alemasov. All rights reserved.
+
+All other images are the property of their respective owners.
