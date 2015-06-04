@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>How to connect LAN and WPAN or why OpenWrt?</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="icon" type="image/png" href="../img/homewsn.png">
+
+	<link rel="stylesheet" href="../css/bootstrap-3.2.0.min.css">
+	<link rel="stylesheet" href="../css/blog.css">
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-static-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="index.html">HomeWSN</a>
+		</div>
+		<div class="collapse navbar-collapse" id="navbar-menu">
+			<ul class="nav navbar-nav">
+				<li><a href="../webdemo.html">Web Demo</a></li>
+				<li><a href="../blog.html">Blog</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+
+<h3 id="how-to-connect-lan-and-wpan-or-why-openwrt-">How to connect LAN and WPAN or why OpenWrt?</h3>
+<span class="post-meta">Jun 4, 2015</span>
+<br>
+<p><a href="https://openwrt.org/">OpenWrt</a> is a Linux distribution for small embedded devices like routers.
+What is the advantage of using small embedded device with OpenWrt and <a href="https://github.com/homewsn/whsnbg">whsnbg</a> as MQTT broker-gateway over the regular computer?
+Please see the pictures below. These pictures are the fragments of the network topology diagram from <a href="../index.html">here</a>:</p>
+<p style="text-align: center;"><img src="../img/scheme-border-router.png"></p>
+<p style="text-align: center;"><img src="../img/scheme-usb-uart.png"></p>
+<p style="text-align: center;"><img src="../img/scheme-broker-gateway.png"></p>
+<br>
+<br>
+<p>Two devices (border-router node and MQTT broker-gateway) and a wired connection between them are required to connect LAN and WPAN.</p>
+<p>The first device is a border-router node.
+The main role of the border-router is to transfer data from WPAN to normal IPv4 SLIP connection and back.
+It must be in the active state (ready for potential incoming transmissions from battery powered sensors and ac adapter powered actuators) all the time.
+It can either be a CC2531 USB dongle or a regular CC2530 module:</p>
+<p style="text-align: center;"><img src="../img/cc2531-cc2530-modules.jpg"></p>
+<br>
+<p>The CC2531 USB dongle is connected to the gateway by USB, the CC2530 module is connected by UART.
+In any case the length of the connecting wires should be as small as possible.</p>
+<p style="text-align: center;"><img src="../img/cc2531-usb.jpg"></p>
+<br>
+<p>The second device can be any regular computer with Linux, Windows or POSIX-compliant OS that has support for IPv4, Ethernet and SLIP protocols.
+It must be on and <a href="https://github.com/homewsn/whsnbg">whsnbg</a> must be run all the time. 
+The role of <a href="https://github.com/homewsn/whsnbg">whsnbg</a> is to transfer MQTT(MQTT-SN) data from wireless sensors and actuators to the database server and user computer and back.
+The best way is to use small embedded device with OpenWrt as the second device.
+Why?</p>
+<ul>
+<li>small size</li>
+<li>low power consumption</li>
+<li>dual (battery and ac adapter) powered (TL-MR10U)</li>
+<li>easy to change location</li>
+<li>not expensive (20-30 USD)</li>
+<li>quiet</li>
+</ul>
+<p>TP-Link TL-WR703N, TL-MR3020 and TL-MR10U have been tested:</p>
+<p style="text-align: center;"><img src="../img/tl-wr703n.jpg"></p>
+<p style="text-align: center;">TP-Link TL-WR703N</p>
+<p style="text-align: center;"><img src="../img/tl-mr3020-02.jpg"></p>
+<p style="text-align: center;">TP-Link TL-MR3020</p>
+<p style="text-align: center;"><img src="../img/tl-mr10u.jpg"></p>
+<p style="text-align: center;">TP-Link TL-MR10U</p>
+<br>
+<br>
+<br>
+
+<div id="disqus_thread"></div>
+</div>
+
+<script type="text/javascript" src="../js/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap-3.2.0.min.js"></script>
+<script type="text/javascript" language="javascript">
+	/* * * CONFIGURATION VARIABLES * * */
+	var disqus_shortname = 'homewsn';
+	
+	/* * * DON'T EDIT BELOW THIS LINE * * */
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</body>
+</html>

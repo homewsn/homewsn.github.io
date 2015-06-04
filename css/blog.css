@@ -1,0 +1,18 @@
+.post-list > li {
+	margin-bottom: 30px;
+	list-style: none;
+}
+.post-link {
+	display: block;
+	font-size: 24px;
+}
+.post-meta {
+  font-size: 14px;
+  color: #828282;
+}
+code  {
+ 	color: #c7254e;
+ 	background-color: #F4F4F4;
+ 	border-radius: 4px;
+ 	padding: 2px 4px;
+}
