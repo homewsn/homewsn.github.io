@@ -54,12 +54,12 @@ Here are the specifications of the devices:</p>
 <li><a href="http://wiki.openwrt.org/toh/tp-link/tl-mr10u">TL-MR10U</a></li>
 </ul>
 <p>The process is not complicated, just follow these steps:</p>
-<ul>
+<ol>
 <li>Download OpenWrt Barrier Breaker 14.07 binary file for the appropriate model:
 <a href="https://downloads.openwrt.org/barrier_breaker/14.07/ar71xx/generic/openwrt-ar71xx-generic-tl-wr703n-v1-squashfs-factory.bin">TL-WR703N</a>,
 <a href="https://downloads.openwrt.org/barrier_breaker/14.07/ar71xx/generic/openwrt-ar71xx-generic-tl-mr3020-v1-squashfs-factory.bin">TL-MR3020</a> or 
 <a href="https://downloads.openwrt.org/barrier_breaker/14.07/ar71xx/generic/openwrt-ar71xx-generic-tl-mr10u-v1-squashfs-factory.bin">TL-MR10U</a></li>
-<li>Connect a network cable between your PC and the device, and set a static IP on your PC of 192.168.1.2 (subnet mask: 255.255.255.0) for TL-WR703N and TL-MR10U; or 192.168.0.2 (subnet mask: 255.255.255.0) for TL-MR3020:</li>
+<li>Connect a network cable between your PC and the device, and set a static IP on your PC of 192.168.1.2 (subnet mask: 255.255.255.0) for TL-WR703N and TL-MR10U; or 192.168.0.2 (subnet mask: 255.255.255.0) for TL-MR3020.</li>
 <br>
 <p style="text-align: center;"><img src="../img/tl-wr703n-ip.jpg"></p>
 <p style="text-align: center;">TP-Link TL-WR703N</p>
@@ -70,11 +70,12 @@ Here are the specifications of the devices:</p>
 <li>Head to the TP-Link admin interface on <a href="http://192.168.1.1">http://192.168.1.1</a> (<a href="http://192.168.0.254">http://192.168.0.254</a>). Login with user <code>admin</code> and password <code>admin</code></li>
 <li>Find the Router Upgrade link on the left-hand menu (the webinterface may be chinese) or go directly to <a href="http://192.168.1.1/userRpm/SoftwareUpgradeRpm.htm">http://192.168.1.1/userRpm/SoftwareUpgradeRpm.htm</a> (<a href="http://192.168.0.254/userRpm/SoftwareUpgradeRpm.htm">http://192.168.0.254/userRpm/SoftwareUpgradeRpm.htm</a>)</li>
 <li>Upload the appropriate OpenWrt binary file to the device.</li>
-<li>Wait 4-5 minutes for the firmware to upload and the device to reboot. TL-WR703N: the blue LED will be lit solid when it&#39;s finished.</li>
-<li>Login to your device via <code>telnet 192.168.1.1</code> or <code>telnet 192.168.0.254</code></li>
+<li>Wait 2-3 minutes for the firmware to upload and the device to reboot.</li>
+<li>TL-MR3020 only: set a static IP on your PC of 192.168.1.2 (subnet mask: 255.255.255.0).</li>
+<li>Login to your device via <code>telnet 192.168.1.1</code></li>
 <li>Type <code>passwd</code> into the prompt. You will be prompted to set a new password for the user root.</li>
 <li>After you set a password the telnet daemon will be disabled, type <code>exit</code> into the prompt.</li>
-<li>Without reboot, SSH is now available; login again with <code>ssh root@192.168.1.1</code> or <code>ssh root@192.168.0.254</code></li>
+<li>Without reboot, SSH is now available; login again with <code>ssh root@192.168.1.1</code></li>
 <li><p>Configure <code>/etc/config/network</code> with an IP address, gateway and DNS servers that allow the device to access the Internet.
 For example, you can remove &#39;wan&#39; interface (wi-fi) and configure &#39;lan&#39; interface (wired ethernet) to get an IP address from the main home router, use DHCP:</p>
 <pre><code>  config interface &#39;loopback&#39;
@@ -89,13 +90,27 @@ For example, you can remove &#39;wan&#39; interface (wi-fi) and configure &#39;l
       option proto &#39;dhcp&#39;
 </code></pre></li>
 <li><p>Configure <code>/etc/config/system</code> with the time zone, for example:</p>
-<pre><code>    option timezone MSK-4</code></pre>
+<pre><code>    option timezone MSK-3</code></pre>
 A list of possible values is in the TZ string column of the <a href="http://wiki.openwrt.org/doc/uci/system#time_zones">Time Zones table</a>.</li>
 <li>Reboot the device to apply the settings.</li>
 <li>Disconnect a network cable between your PC and the device, connect your PC and the OpenWrt device to the home LAN usual way.</li>
 <li>Visit your main home router web interface to know new IP address of the OpenWrt device if you use DHCP in your LAN.</li>
-
+</ol>
+<br>
+<p>If you want to reflash OpenWrt:</p>
+<ul>
+<li>Upload the appropriate binary file (for example, openwrt-ar71xx-generic-tl-mr10u-v1-squashfs-factory.bin for TL-MR10U) to the <code>/tmp</code> directory of the device.</li>
+<li><p>Then type in terminal or PuTTY:</p>
+<pre><code>cd /tmp
+mtd -r write openwrt-ar71xx-generic-tl-mr10u-v1-squashfs-factory.bin firmware</code></pre></li>
+<li><p>If you know url of the binary file you can do all this in one step, for example:</p>
+<pre><code>cd /tmp
+wget http://homewsn.com/firmware/openwrt/openwrt-ar71xx-generic-tl-mr10u-v1-squashfs-factory.bin
+mtd -r write openwrt-ar71xx-generic-tl-mr10u-v1-squashfs-factory.bin firmware</code></pre></li>
+<li>Then follow the steps 8 through 16 in the previous list.</li>
 </ul>
+
+
 <p>References:
 <a href="http://embeddedtimes.blogspot.ru/2011/09/tp-link-tl-wr703n-tiny-linux-capable.html">1</a>,
 <a href="http://wiki.openwrt.org/doc/howto/firstlogin">2</a></p>
