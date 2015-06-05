@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>How to install OpenWrt?</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="icon" type="image/png" href="../img/homewsn.png">
+
+	<link rel="stylesheet" href="../css/bootstrap-3.2.0.min.css">
+	<link rel="stylesheet" href="../css/blog.css">
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-static-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="index.html">HomeWSN</a>
+		</div>
+		<div class="collapse navbar-collapse" id="navbar-menu">
+			<ul class="nav navbar-nav">
+				<li><a href="../webdemo.html">Web Demo</a></li>
+				<li><a href="../blog.html">Blog</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+
+<h3>How to install OpenWrt?</h3>
+<span class="post-meta">Jun 5, 2015</span>
+<br>
+<p>First you need to choose the router model. I have only tried TP-Link TL-WR703N, TL-MR3020 and TL-MR10U models.
+Here are the specifications of the devices:</p>
+<ul>
+<li>Atheros AR9331@400MHz <a href="https://wikidevi.com/wiki/MIPS_24K">MIPS 24K core</a></li>
+<li>10/100 Mbit Ethernet port</li>
+<li>4 MB flash memory</li>
+<li>32 MB RAM</li>
+<li>USB 2.0 port</li>
+<li>micro-USB port for power</li>
+</ul>
+<p>If you are installing OpenWrt for the first time you can read instructions from official OpenWrt wiki:</p>
+<ul>
+<li><a href="http://wiki.openwrt.org/toh/tp-link/tl-wr703n">TL-WR703N</a></li>
+<li><a href="http://wiki.openwrt.org/toh/tp-link/tl-mr3020">TL-MR3020</a></li>
+<li><a href="http://wiki.openwrt.org/toh/tp-link/tl-mr10u">TL-MR10U</a></li>
+</ul>
+<p>The process is not complicated, just follow these steps:</p>
+<ul>
+<li>Download OpenWrt Barrier Breaker 14.07 binary file for the appropriate model:
+<a href="https://downloads.openwrt.org/barrier_breaker/14.07/ar71xx/generic/openwrt-ar71xx-generic-tl-wr703n-v1-squashfs-factory.bin">TL-WR703N</a>,
+<a href="https://downloads.openwrt.org/barrier_breaker/14.07/ar71xx/generic/openwrt-ar71xx-generic-tl-mr3020-v1-squashfs-factory.bin">TL-MR3020</a> or 
+<a href="https://downloads.openwrt.org/barrier_breaker/14.07/ar71xx/generic/openwrt-ar71xx-generic-tl-mr10u-v1-squashfs-factory.bin">TL-MR10U</a></li>
+<li>Connect a network cable between your PC and the device, and set a static IP on your PC of 192.168.1.2 (subnet mask: 255.255.255.0) for TL-WR703N and TL-MR10U; or 192.168.0.2 (subnet mask: 255.255.255.0) for TL-MR3020:</li>
+<br>
+<p style="text-align: center;"><img src="../img/tl-wr703n-ip.jpg"></p>
+<p style="text-align: center;">TP-Link TL-WR703N</p>
+<p style="text-align: center;"><img src="../img/tl-mr3020-ip.jpg"></p>
+<p style="text-align: center;">TP-Link TL-MR3020</p>
+<p style="text-align: center;"><img src="../img/tl-mr10u-ip.jpg"></p>
+<p style="text-align: center;">TP-Link TL-MR10U</p>
+<li>Head to the TP-Link admin interface on <a href="http://192.168.1.1">http://192.168.1.1</a> (<a href="http://192.168.0.254">http://192.168.0.254</a>). Login with user <code>admin</code> and password <code>admin</code></li>
+<li>Find the Router Upgrade link on the left-hand menu (the webinterface may be chinese) or go directly to <a href="http://192.168.1.1/userRpm/SoftwareUpgradeRpm.htm">http://192.168.1.1/userRpm/SoftwareUpgradeRpm.htm</a> (<a href="http://192.168.0.254/userRpm/SoftwareUpgradeRpm.htm">http://192.168.0.254/userRpm/SoftwareUpgradeRpm.htm</a>)</li>
+<li>Upload the appropriate OpenWrt binary file to the device.</li>
+<li>Wait 4-5 minutes for the firmware to upload and the device to reboot. TL-WR703N: the blue LED will be lit solid when it&#39;s finished.</li>
+<li>Login to your device via <code>telnet 192.168.1.1</code> or <code>telnet 192.168.0.254</code></li>
+<li>Type <code>passwd</code> into the prompt. You will be prompted to set a new password for the user root.</li>
+<li>After you set a password the telnet daemon will be disabled, type <code>exit</code> into the prompt.</li>
+<li>Without reboot, SSH is now available; login again with <code>ssh root@192.168.1.1</code> or <code>ssh root@192.168.0.254</code></li>
+<li><p>Configure <code>/etc/config/network</code> with an IP address, gateway and DNS servers that allow the device to access the Internet.
+For example, you can remove &#39;wan&#39; interface (wi-fi) and configure &#39;lan&#39; interface (wired ethernet) to get an IP address from the main home router, use DHCP:</p>
+<pre><code>  config interface &#39;loopback&#39;
+      option ifname &#39;lo&#39;
+      option proto &#39;static&#39;
+      option ipaddr &#39;127.0.0.1&#39;
+      option netmask &#39;255.0.0.0&#39;
+
+  config interface &#39;lan&#39;
+      option ifname &#39;eth0&#39;
+      option type &#39;bridge&#39;
+      option proto &#39;dhcp&#39;
+</code></pre></li>
+<li><p>Configure <code>/etc/config/system</code> with the time zone, for example:</p>
+<pre><code>    option timezone MSK-4</code></pre>
+A list of possible values is in the TZ string column of the <a href="http://wiki.openwrt.org/doc/uci/system#time_zones">Time Zones table</a>.</li>
+<li>Reboot the device to apply the settings.</li>
+<li>Disconnect a network cable between your PC and the device, connect your PC and the OpenWrt device to the home LAN usual way.</li>
+<li>Visit your main home router web interface to know new IP address of the OpenWrt device if you use DHCP in your LAN.</li>
+
+</ul>
+<p>References:
+<a href="http://embeddedtimes.blogspot.ru/2011/09/tp-link-tl-wr703n-tiny-linux-capable.html">1</a>,
+<a href="http://wiki.openwrt.org/doc/howto/firstlogin">2</a></p>
+
+
+<br>
+<br>
+
+<div id="disqus_thread"></div>
+</div>
+
+<script type="text/javascript" src="../js/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap-3.2.0.min.js"></script>
+<!-- Google analytics -->
+<script type="text/javascript" src="../js/analytics.js"></script>
+<!-- Discus -->
+<script type="text/javascript" language="javascript">
+	/* * * CONFIGURATION VARIABLES * * */
+	var disqus_shortname = 'homewsn';
+	
+	/* * * DON'T EDIT BELOW THIS LINE * * */
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</body>
+</html>
