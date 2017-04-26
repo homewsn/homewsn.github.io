@@ -34,8 +34,10 @@ var HomeWSN = (function() {
 		var randomLong = Math.floor(Math.random() * 4294967295); // 2^32
 
 		if (WebDemo === true) {
-			host = 'test.mosquitto.org';
-			port = 8080;
+//			host = 'test.mosquitto.org';
+//			port = 8080;
+			host = 'broker.hivemq.com';
+			port = 8000;
 			clientId = 'HomeWSN.WebDemo.' + randomLong.toString();
 		}
 		else {
