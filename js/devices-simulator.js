@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2015 Vladimir Alemasov
+* Copyright (c) 2015, 2017 Vladimir Alemasov
 * All rights reserved
 *
 * This program and the accompanying materials are distributed under 
@@ -127,9 +127,9 @@ HomeWSN.Simulator = (function() {
 			HomeWSN.Content.mqttPublish(topic, payload, true);
 		});
 
-		$('.slider').on('slide', function(event) {
+		$('.slider').on('change', function(event) {
 			var sn = $(event.target).parent().find('input').data('sn');
-			var payload = event.value.toString();
+			var payload = event.value.newValue.toString();
 			var topic = devices[sn].device === 'actuator' ? 'actuators/' : 'sensors/';
 			topic += devices[sn].id + '/' + devices[sn].param;
 			// exert control action
